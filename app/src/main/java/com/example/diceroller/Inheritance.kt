@@ -2,32 +2,16 @@ package com.example.diceroller
 
 
 
-class Dice(
-    private val numSides: Int
-) {
-    fun roll(): Int {
-        return (1..numSides).random()
-
+class Inheritance{
+    open class Car (var name: String, var color: String){
+        fun cost(): Double{
+           return 300000.00
+        }
     }
-   open class Car (private val name: String = "Toyota", private val color: String = "Red"){
-       val smooth = Car("Chevrolet", "Grey").cost()
-       val cool = Car("4runner", "Black").cost()
 
-       private fun cost(){
-          name
-           color
-       }
-       class ChildCar: Car() {
-           private fun myCar(){
-               println(smooth)
-               println(cool)
-           }
-           fun main(){
-               val myObj = ChildCar()
-               myObj.myCar()
-           }
+       val smooth = Car("Chevrolet", "Grey")
+       val cool = Car("4runner", "Black")
 
-       }
-    }
+       class ChildCar(color: String, name: String): Car(color, name)
 
 }
